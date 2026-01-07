@@ -11,7 +11,6 @@ def selection_sort(arr):
         # arr[min_index],arr[i]=arr[i],arr[min_index]
         arr[max_index],arr[i]=arr[i],arr[max_index]
         print(arr)
-         
 
 nums=[64, 25, 12, 22, 11]
 selection_sort(nums)

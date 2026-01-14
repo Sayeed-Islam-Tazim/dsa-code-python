@@ -20,7 +20,7 @@ def best_time_to_buy_and_sell(prices):
     #         profit = prices[i] - min_price
     #         max_profit = max(max_profit, profit)
     
-    # Optimal Approach
+    # Most Optimal Approach
     min_price = float('inf')
     for i in range(0, n):
         min_price = min(min_price, prices[i])

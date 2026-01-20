@@ -2,7 +2,7 @@ def spiral_matrix(matrix):
     result = []   
     top, left, right, bottom = 0, 0, len(matrix[0]) - 1, len(matrix) - 1
 
-    while top <= bottom and left <= right:        
+    while top <= bottom and left <= right:    
         for i in range(left, right + 1):
             result.append(matrix[top][i])
         top += 1
@@ -11,13 +11,15 @@ def spiral_matrix(matrix):
             result.append(matrix[i][right])
         right -= 1
         
-        for i in range(right, left  - 1, -1):
-            result.append(matrix[bottom][i])
-        bottom -= 1
+        if top <= bottom:
+            for i in range(right, left  - 1, -1):
+                result.append(matrix[bottom][i])
+            bottom -= 1
         
-        for i in range(bottom, top - 1, -1):
-            result.append(matrix[i][left])
-        left += 1
+        if left <= right:
+            for i in range(bottom, top - 1, -1):
+                result.append(matrix[i][left])
+            left += 1
         
     print(result)
     return result
